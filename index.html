@@ -7,18 +7,18 @@
 <meta name="description" content="Plantillas de Excel y Google Sheets para autónomos y pequeños negocios en España: ingresos y gastos, IVA e IRPF, presupuestos, escandallos, turnos y stock. Calculadoras gratis de cuota de autónomos, IVA y precio por hora.">
 <link rel="canonical" href="https://hojalista.es/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f6f1e6">
+<meta name="theme-color" content="#06140f">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:url" content="https://hojalista.es/">
 <meta property="og:title" content="Hojalista · Plantillas de Excel y calculadoras para autónomos">
 <meta property="og:description" content="Calculadoras gratis de cuota de autónomos, IVA e IRPF y precio por hora, y plantillas de Excel y Google Sheets para autónomos y pequeños negocios en España.">
 <meta property="og:image" content="https://hojalista.es/og.png">
-<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<canvas id="fondo" aria-hidden="true"></canvas>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="top"><div class="wrap">
   <a class="logo" href="#">hoja<span>lista</span></a>
@@ -26,35 +26,16 @@
 </div></header>
 
 <main id="contenido">
-<div class="hero"><div class="wrap">
-  <div class="hero-text">
-    <p class="ref"><span>A1</span>Plantillas de Excel para autónomos, en español</p>
+<div class="hero">
+  <div class="wrap hero-text">
     <h1>Tu hoja, <em>lista</em>.</h1>
-    <p class="lead">Plantillas de Excel y Google Sheets para llevar las cuentas de tu negocio sin pelearte con las fórmulas. Hechas para autónomos y pequeños negocios en España: con IVA, IRPF y trimestres.</p>
+    <p class="lead">Plantillas de Excel y Google Sheets para autónomos en España. Con IVA, IRPF y trimestres ya resueltos.</p>
     <div class="cta"><a class="btn" href="#prueba">Prueba una gratis</a><a class="link" href="#plantillas">Ver las plantillas</a></div>
-    <p class="trust">Sin tarjeta ni registro · Garantía de devolución de 14 días</p>
   </div>
-  <div class="hero-art" aria-hidden="true">
-    <div class="sheet">
-      <div class="chrome"><i></i>ingresos-gastos-impuestos.xlsx</div>
-      <div class="fx"><span>B6</span><span class="f">fx</span><span>=B4+B5</span></div>
-      <table>
-        <tr><th></th><th>A</th><th>B</th></tr>
-        <tr class="head"><th>1</th><td colspan="2">Trimestre 1 · Resumen</td></tr>
-        <tr class="in"><th>2</th><td>Ingresos sin IVA</td><td>5.850,00 €</td></tr>
-        <tr class="in"><th>3</th><td>Gastos deducibles</td><td>1.240,00 €</td></tr>
-        <tr class="out"><th>4</th><td>IVA a pagar (modelo 303)</td><td>968,10 €</td></tr>
-        <tr class="out"><th>5</th><td>IRPF a pagar (modelo 130)</td><td>922,00 €</td></tr>
-        <tr class="out sel"><th>6</th><td>Aparta para Hacienda</td><td>1.890,10 €</td></tr>
-      </table>
-      <div class="sheet-tabs"><span>Inicio</span><span>Facturas</span><span>Gastos</span><span class="on">Resumen</span></div>
-    </div>
-    <p class="legend"><span class="k in"></span>Lo amarillo lo rellenas tú <span class="k out"></span>Lo verde se calcula solo</p>
-  </div>
-</div></div>
+  <div class="facts"><div class="wrap"><ul><li>Sin tarjeta ni registro</li><li>Garantía de devolución de 14 días</li><li>Un pago, sin suscripción</li></ul></div></div>
+</div>
 
-<section class="alt" id="prueba"><div class="wrap">
-  <p class="ref"><span>B2</span>Pruébala antes de pagar</p>
+<section id="prueba"><div class="wrap">
   <h2>La tienda es nueva. No te pedimos que te fíes: compruébalo.</h2>
   <p class="sub">Todavía no tenemos reseñas, así que te damos tres cosas mejores que una promesa.</p>
   <div class="trio">
@@ -80,9 +61,8 @@
 </div></section>
 
 <section id="calculadoras"><div class="wrap">
-  <p class="ref"><span>C3</span>Gratis y sin registro</p>
-  <h2>Calculadoras</h2>
-  <p class="sub">Haz el número en diez segundos. Los cálculos se hacen en tu navegador: no guardamos nada de lo que escribes.</p>
+  <h2>Haz el número en diez segundos</h2>
+  <p class="sub">Tres calculadoras gratis y sin registro. Los cálculos se hacen en tu navegador: no guardamos nada de lo que escribes.</p>
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-calc="calc-cuota">Cuota de autónomos 2026</button>
     <button role="tab" aria-selected="false" data-calc="calc-factura">IVA e IRPF de una factura</button>
@@ -168,28 +148,25 @@
   </div>
 </div></section>
 
-<section class="alt" id="plantillas"><div class="wrap">
-  <p class="ref"><span>D4</span>Catálogo</p>
-  <h2>Plantillas</h2>
+<section id="plantillas"><div class="wrap">
+  <h2>Plantillas que ya vienen hechas</h2>
   <p class="sub">Un pago y es tuya para siempre. Descarga inmediata en .xlsx: funciona en Excel y en Google Sheets, con ejemplos para que veas cómo se rellena. Y si no te sirve, tienes 14 días para pedir la devolución.</p>
   <div class="grid" id="catalogo-grid"></div>
 </div></section>
 
 <section id="como"><div class="wrap split">
   <div class="split-head">
-    <p class="ref"><span>E5</span>Cómo funciona</p>
     <h2>Abres, rellenas lo amarillo y listo</h2>
   </div>
   <ol class="steps">
-    <li class="rv"><div><h3>Descargas</h3><p>Recibes el archivo al momento de comprar. Sin suscripción ni programas que instalar.</p></div><span class="cell file" aria-hidden="true">.xlsx</span></li>
-    <li class="rv"><div><h3>Rellenas lo amarillo</h3><p>Las celdas amarillas son tus datos. Cada plantilla trae una hoja de inicio con los pasos.</p></div><span class="cell in" aria-hidden="true">1.200,00 €</span></li>
-    <li class="rv"><div><h3>Lo verde se calcula solo</h3><p>Totales, impuestos y avisos salen solos. Las fórmulas se comprueban una a una antes de publicar cada plantilla.</p></div><span class="cell out" aria-hidden="true">252,00 €</span></li>
+    <li class="rv"><div><h3>Descargas</h3><p>Recibes el archivo al momento de comprar. Sin suscripción ni programas que instalar.</p></div></li>
+    <li class="rv"><div><h3>Rellenas lo amarillo</h3><p>Las celdas amarillas son tus datos. Cada plantilla trae una hoja de inicio con los pasos.</p></div></li>
+    <li class="rv"><div><h3>Lo verde se calcula solo</h3><p>Totales, impuestos y avisos salen solos. Las fórmulas se comprueban una a una antes de publicar cada plantilla.</p></div></li>
   </ol>
 </div></section>
 
-<section class="alt" id="dudas"><div class="wrap split">
+<section id="dudas"><div class="wrap split">
   <div class="split-head">
-    <p class="ref"><span>F6</span>Dudas</p>
     <h2>Preguntas frecuentes</h2>
     <p class="sub">¿No está la tuya? Escribe a <a href="mailto:hola.hojalista@gmail.com">hola.hojalista@gmail.com</a>.</p>
   </div>
